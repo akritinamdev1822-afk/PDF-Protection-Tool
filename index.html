@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePDF - Modern Web Interface</title>
+    <!-- Use standard web fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="description" content="Secure your PDFs with enterprise-level encryption.">
+</head>
+<body>
+    <div class="glow-bg"></div>
+
+    <main class="container">
+        <header>
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                <h1>SecurePDF</h1>
+            </div>
+            <p>Advanced Protection & Security Tool</p>
+        </header>
+
+        <section class="glass-panel">
+            <div class="tabs">
+                <button class="tab-btn active" data-action="encrypt">Encrypt PDF</button>
+                <button class="tab-btn" data-action="decrypt">Decrypt PDF</button>
+            </div>
+
+            <div class="drop-zone" id="drop-zone">
+                <div class="upload-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                </div>
+                <p>Drag and drop your PDF here</p>
+                <span class="or">OR</span>
+                <button type="button" class="btn-browse" onclick="document.getElementById('file-input').click()">Browse Files</button>
+                <input type="file" id="file-input" accept=".pdf" hidden>
+                <div id="file-details" class="file-details hidden"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Enter secure password">
+                    <button type="button" id="toggle-pwd" class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </button>
+                </div>
+                <div class="strength-meter hidden" id="strength-meter">
+                    <div class="strength-bar"><div class="fill" id="strength-fill"></div></div>
+                    <span id="strength-text">Weak</span>
+                </div>
+            </div>
+            <div class="controls-row">
+                <button type="button" class="btn-text" id="btn-generate">Generate Strong Password</button>
+            </div>
+
+            <div class="action-section">
+                <button id="btn-process" class="btn-primary glow-btn">
+                    <span>Encrypt & Save PDF</span>
+                </button>
+            </div>
+            
+            <div id="status-message" class="status-message hidden"></div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

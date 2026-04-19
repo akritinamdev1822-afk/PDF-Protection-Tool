@@ -6,7 +6,7 @@ from pdf_handler import encrypt_pdf, decrypt_pdf
 from password_utils import check_password_strength, generate_strong_password
 from werkzeug.utils import secure_filename
 
-from threading import Timer
+
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = tempfile.gettempdir()
@@ -64,8 +64,7 @@ def download_file(filename):
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(filename))
     return send_file(file_path, as_attachment=True)
 
-def open_browser():
-    webbrowser.open_new('http://127.0.0.1:5000/')
+
 
 if __name__ == '__main__':
     # Open the browser dynamically shortly after server starts

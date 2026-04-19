@@ -1,5 +1,5 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/main" }],
+  "version": 2,
   "builds": [
     {
       "src": "app.py",

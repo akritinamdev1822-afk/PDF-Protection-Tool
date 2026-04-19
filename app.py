@@ -69,5 +69,5 @@ def open_browser():
 
 if __name__ == '__main__':
     # Open the browser dynamically shortly after server starts
-    Timer(1.5, open_browser).start()
+    
     app.run(debug=True, port=5000, use_reloader=False)

@@ -1,4 +1,5 @@
-Flask>=3.0.0
-pypdf>=5.1.0
-Werkzeug>=3.0.0
-gunicorn
+Flask==3.0.0
+pypdf==5.1.0
+Werkzeug==3.0.0
+gunicorn==21.2.0
+python-uuid==0.3.0

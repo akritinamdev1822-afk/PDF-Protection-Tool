@@ -2,10 +2,10 @@ from flask import Flask, render_template, request, send_file, jsonify
 import os
 import uuid
 import tempfile
-from utils.pdf_handler import encrypt_pdf, decrypt_pdf
-from utils.password_utils import check_password_strength, generate_strong_password
+from pdf_handler import encrypt_pdf, decrypt_pdf
+from password_utils import check_password_strength, generate_strong_password
 from werkzeug.utils import secure_filename
-import webbrowser
+
 from threading import Timer
 
 app = Flask(__name__)
